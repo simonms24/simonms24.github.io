@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f2833;
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: white;
+  border-radius: 8px;
+  margin: 5px;
+  transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+}
+
+.top {
+  top: 18%;
+}
+
+.middle {
+  top: 48%;
+}
+
+.botton {
+  top: 78%;
+}
+
+.icon.close .top {
+  transform: rotate(45deg);
+  top: 48%;
+}
+
+.icon.close .middle,
+.icon.close .botton {
+  transform: rotate(-45deg);
+  top: 48%;
+}
+
+nav {
+  height: 40px;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+}
+
+.menu {
+  position: relative;
+  width: 30px;
+  left: 10px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.nav-links {
+  position: fixed;
+  background: #45a29e;
+  flex-direction: column;
+  clip-path: circle(60px at 0 -20%);
+  -webkit-clip-path: circle(60px at 0 -20%);
+  transition: all 0.55s ease-out;
+  pointer-events: none;
+  display: flex;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+
+  li {
+    opacity: 0;
+
+    a {
+      position: relative;
+      display: block;
+      font-size: 5em;
+      text-decoration: none;
+      font-family: "Poppins";
+      color: transparent;
+      -webkit-text-stroke: 1px #1f2833;
+      font-weight: 800;
+      line-height: 1.2em;
+    }
+
+    a:hover {
+      color: #c5c6c7;
+      -webkit-text-stroke: 1px #000;
+      transition: 0.5s;
+    }
+
+    a:before,
+    a:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+    }
+
+    a:hover:before {
+      color: #1f2833;
+      z-index: 1;
+      -webkit-text-stroke: 1px #000;
+      transform: translate(10px, -10px);
+    }
+
+    a:hover:after {
+      color: #66fcf1;
+      z-index: 2;
+      -webkit-text-stroke: 1px #000;
+      transform: translate(20px, -20px);
+    }
+  }
+
+  li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+
+  li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+
+  li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+
+  li:nth-child(4) {
+    transition: all 0.5s ease 0.8s;
+  }
+
+  li.fade {
+    opacity: 1;
+  }
+}
+
+.nav-links.open {
+  clip-path: circle(2500px at 0 -20%);
+  -webkit-clip-path: circle(2500px at 0 -20%);
+  pointer-events: all;
+}
+
+.header {
+  width: 100%;
+  height: 50vh;
+
+  svg {
+    height: 100%;
+    width: 100%;
+    margin-top: 5vh;
+
+    .sign {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: animate 7s linear 1 forwards;
+    }
+  }
+}
+
+@keyframes animate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.button {
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #66fcf1;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+
+    span {
+      position: absolute;
+      display: block;
+    }
+
+    span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #66fcf1);
+    }
+
+    span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #66fcf1);
+    }
+
+    span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #66fcf1);
+    }
+
+    span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #66fcf1);
+    }
+  }
+
+  a:hover {
+    color: #1f2833;
+    background: #66fcf1;
+    box-shadow: 0 0 10px #66fcf1, 0 0 40px #66fcf1, 0 0 80px #66fcf1;
+    transition-delay: 0.5s;
+
+    span:nth-child(1) {
+      left: 100%;
+      transition: 0.5s;
+    }
+
+    span:nth-child(3) {
+      right: 100%;
+      transition: 0.5s;
+      transition-delay: 0.25s;
+    }
+
+    span:nth-child(2) {
+      top: 100%;
+      transition: 0.5s;
+      transition-delay: 0.125s;
+    }
+
+    span:nth-child(4) {
+      bottom: 100%;
+      transition: 0.5s;
+      transition-delay: 0.375s;
+    }
+  }
+}
+
+// .avatar {
+//   height: 25vh;
+//   display: flex;
+//   justify-content: center;
+//   -webkit-clip-path: circle(12.5vh);
+//   clip-path: circle(12.5vh);
+//   z-index: -1;
+
+//   img {
+//     height: 100%;
+//     margin-left: 30px;
+//     z-index: -1;
+//   }
+// }
+
+h1 {
+  font-size: 124px;
+  position: absolute;
+  left: -15%;
+  top: -30%;
+  z-index: -1;
+  opacity: 10%;
+}
+
+.text {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: justify;
+
+    .expressions {
+      font-size: 12px;
+      font-style: italic;
+      opacity: 50%;
+      cursor: default;
+      color: #000;
+      background-color: #000;
+    }
+
+    .expressions:hover {
+      opacity: 100%;
+      color: #fff;
+      background-color: inherit;
+      text-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px #fff;
+    }
+  }
+
+  #about_text {
+    color: #c5c6c7;
+
+    strong {
+      font-size: 24px;
+    }
+  }
+}
+
+footer {
+  height: 1vh;
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  bottom: 1vh;
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+
+#mc_embed_signup {
+  font: 14px Helvetica, Arial, sans-serif;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 40%;
+
+  .clear {
+    display: flex;
+    justify-content: center;
+
+    #mc-embedded-subscribe {
+      position: relative;
+      display: inline-block;
+      padding: 15px 30px;
+      color: #0b0c10;
+      background-color: #45a29e;
+      height: auto;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-decoration: none;
+      font-size: 24px;
+      overflow: hidden;
+      transition: 0.2s;
+    }
+
+    #mc-embedded-subscribe:hover {
+      background-color: #0b0c10;
+      color: #45a29e;
+    }
+  }
+}

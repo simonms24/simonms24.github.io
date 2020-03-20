@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #1f2833;
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: white;
+  border-radius: 8px;
+  margin: 5px;
+  -webkit-transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+  transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+}
+
+.top {
+  top: 18%;
+}
+
+.middle {
+  top: 48%;
+}
+
+.botton {
+  top: 78%;
+}
+
+.icon.close .top {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 48%;
+}
+
+.icon.close .middle,
+.icon.close .botton {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 48%;
+}
+
+nav {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+}
+
+.menu {
+  position: relative;
+  width: 30px;
+  left: 10px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.nav-links {
+  position: fixed;
+  background: #45a29e;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  clip-path: circle(60px at 0 -20%);
+  -webkit-clip-path: circle(60px at 0 -20%);
+  -webkit-transition: all 0.55s ease-out;
+  transition: all 0.55s ease-out;
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+
+.nav-links li {
+  opacity: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  display: block;
+  font-size: 5em;
+  text-decoration: none;
+  font-family: "Poppins";
+  color: transparent;
+  -webkit-text-stroke: 1px #1f2833;
+  font-weight: 800;
+  line-height: 1.2em;
+}
+
+.nav-links li a:hover {
+  color: #c5c6c7;
+  -webkit-text-stroke: 1px #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.nav-links li a:before,
+.nav-links li a:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.nav-links li a:hover:before {
+  color: #1f2833;
+  z-index: 1;
+  -webkit-text-stroke: 1px #000;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+}
+
+.nav-links li a:hover:after {
+  color: #66fcf1;
+  z-index: 2;
+  -webkit-text-stroke: 1px #000;
+  -webkit-transform: translate(20px, -20px);
+          transform: translate(20px, -20px);
+}
+
+.nav-links li:nth-child(1) {
+  -webkit-transition: all 0.5s ease 0.2s;
+  transition: all 0.5s ease 0.2s;
+}
+
+.nav-links li:nth-child(2) {
+  -webkit-transition: all 0.5s ease 0.4s;
+  transition: all 0.5s ease 0.4s;
+}
+
+.nav-links li:nth-child(3) {
+  -webkit-transition: all 0.5s ease 0.6s;
+  transition: all 0.5s ease 0.6s;
+}
+
+.nav-links li:nth-child(4) {
+  -webkit-transition: all 0.5s ease 0.8s;
+  transition: all 0.5s ease 0.8s;
+}
+
+.nav-links li.fade {
+  opacity: 1;
+}
+
+.nav-links.open {
+  clip-path: circle(2500px at 0 -20%);
+  -webkit-clip-path: circle(2500px at 0 -20%);
+  pointer-events: all;
+}
+
+.header {
+  width: 100%;
+  height: 50vh;
+}
+
+.header svg {
+  height: 100%;
+  width: 100%;
+  margin-top: 5vh;
+}
+
+.header svg .sign {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  -webkit-animation: animate 7s linear 1 forwards;
+          animation: animate 7s linear 1 forwards;
+}
+
+@-webkit-keyframes animate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.button {
+  margin-top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #66fcf1;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 24px;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.button a span {
+  position: absolute;
+  display: block;
+}
+
+.button a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#66fcf1));
+  background: linear-gradient(90deg, transparent, #66fcf1);
+}
+
+.button a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#66fcf1));
+  background: linear-gradient(270deg, transparent, #66fcf1);
+}
+
+.button a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#66fcf1));
+  background: linear-gradient(180deg, transparent, #66fcf1);
+}
+
+.button a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#66fcf1));
+  background: linear-gradient(360deg, transparent, #66fcf1);
+}
+
+.button a:hover {
+  color: #1f2833;
+  background: #66fcf1;
+  -webkit-box-shadow: 0 0 10px #66fcf1, 0 0 40px #66fcf1, 0 0 80px #66fcf1;
+          box-shadow: 0 0 10px #66fcf1, 0 0 40px #66fcf1, 0 0 80px #66fcf1;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.button a:hover span:nth-child(1) {
+  left: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.button a:hover span:nth-child(3) {
+  right: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.button a:hover span:nth-child(2) {
+  top: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: 0.125s;
+          transition-delay: 0.125s;
+}
+
+.button a:hover span:nth-child(4) {
+  bottom: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: 0.375s;
+          transition-delay: 0.375s;
+}
+
+h1 {
+  font-size: 124px;
+  position: absolute;
+  left: -15%;
+  top: -30%;
+  z-index: -1;
+  opacity: 10%;
+}
+
+.text {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+}
+
+.text p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+.text p .expressions {
+  font-size: 12px;
+  font-style: italic;
+  opacity: 50%;
+  cursor: default;
+  color: #000;
+  background-color: #000;
+}
+
+.text p .expressions:hover {
+  opacity: 100%;
+  color: #fff;
+  background-color: inherit;
+  text-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px #fff;
+}
+
+.text #about_text {
+  color: #c5c6c7;
+}
+
+.text #about_text strong {
+  font-size: 24px;
+}
+
+footer {
+  height: 1vh;
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  bottom: 1vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: -1;
+}
+
+#mc_embed_signup {
+  font: 14px Helvetica, Arial, sans-serif;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 40%;
+}
+
+#mc_embed_signup .clear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#mc_embed_signup .clear #mc-embedded-subscribe {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #0b0c10;
+  background-color: #45a29e;
+  height: auto;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 24px;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#mc_embed_signup .clear #mc-embedded-subscribe:hover {
+  background-color: #0b0c10;
+  color: #45a29e;
+}
+/*# sourceMappingURL=main.css.map */
