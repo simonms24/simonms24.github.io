@@ -12,3 +12,9 @@ menu.addEventListener("click", () => {
 $(".menu").click(function() {
   $(".icon").toggleClass("close");
 });
+
+$("#start-button").click(function() {
+  $("#start-button").toggleClass("start");
+  $(".header").toggleClass("start");
+  $(".container").toggleClass("start");
+});

@@ -1,0 +1,49 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  -webkit-perspective: 1px;
+          perspective: 1px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 100vh;
+  padding: 30vw 0 5vw;
+  position: relative;
+  -webkit-transform-style: inherit;
+          transform-style: inherit;
+  width: 100vh;
+}
+
+header,
+header:before {
+  background: 50% 50% / cover;
+}
+
+header::before {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background-image: url("../Images/BlackHeader.jpg");
+  background-size: cover;
+  -webkit-transform-origin: center center 0;
+          transform-origin: center center 0;
+  -webkit-transform: translateZ(-1px) scale(2);
+          transform: translateZ(-1px) scale(2);
+  z-index: -1;
+  min-height: 100vh;
+}
+/*# sourceMappingURL=parallax.css.map */

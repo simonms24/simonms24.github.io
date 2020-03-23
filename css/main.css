@@ -11,6 +11,16 @@ body {
   color: white;
   font-family: sans-serif;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .line {
@@ -50,12 +60,14 @@ body {
 }
 
 nav {
+  position: relative;
+  width: 100%;
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
 }
 
 .menu {
@@ -173,14 +185,21 @@ nav {
 }
 
 .header {
+  position: relative;
   width: 100%;
-  height: 50vh;
+  height: 50%;
+  margin-top: 40px;
+  padding: 0 10%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 .header svg {
-  height: 100%;
+  position: relative;
   width: 100%;
-  margin-top: 5vh;
+  height: 100%;
 }
 
 .header svg .sign {
@@ -203,7 +222,7 @@ nav {
 }
 
 .button {
-  margin-top: 20vh;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,6 +232,8 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .button a {
@@ -357,17 +378,9 @@ h1 {
 }
 
 footer {
-  height: 1vh;
+  margin-top: auto;
   font-size: 12px;
-  position: absolute;
-  width: 100%;
-  bottom: 1vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-align: center;
   z-index: -1;
 }
 
@@ -407,5 +420,165 @@ footer {
 #mc_embed_signup .clear #mc-embedded-subscribe:hover {
   background-color: #0b0c10;
   color: #45a29e;
+}
+
+.button.start {
+  opacity: 0;
+  z-index: -1;
+}
+
+.header.start {
+  padding: 0 30%;
+}
+
+.container {
+  opacity: 0;
+  z-index: -2;
+  width: 1000px;
+  position: absolute;
+  top: 45vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #000;
+  cursor: default;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.container .card {
+  position: relative;
+}
+
+.container .card .face {
+  width: 300px;
+  height: 200px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .card .face.face1 {
+  position: relative;
+  background: #1f2833;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+}
+
+.container .card .face.face1 .content {
+  opacity: 0.2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .card .face.face1 .content img {
+  max-width: 100px;
+}
+
+.container .card .face.face1 .content h3 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.container .card .face.face2 {
+  position: relative;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+
+.container .card .face.face2 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .card .face.face2 .content p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container .card .face.face2 .content a {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #1f2833;
+  padding: 5px;
+  border: 1px solid #1f2833;
+}
+
+.container .card .face.face2 .content a:hover {
+  background: #1f2833;
+  color: #fff;
+}
+
+.container .card:hover .face.face1 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  background: #45a29e;
+}
+
+.container .card:hover .face.face1 .content {
+  opacity: 1;
+}
+
+.container .card:hover .face.face2 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.container.start {
+  opacity: 1;
+  z-index: 1;
 }
 /*# sourceMappingURL=main.css.map */
