@@ -4,16 +4,16 @@ const links = document.querySelectorAll(".nav-links li");
 
 menu.addEventListener("click", () => {
   navLinks.classList.toggle("open");
-  links.forEach(link => {
+  links.forEach((link) => {
     link.classList.toggle("fade");
   });
 });
 
-$(".menu").click(function() {
+$(".menu").click(function () {
   $(".icon").toggleClass("close");
 });
 
-$("#start-button").click(function() {
+$("#start-button").click(function () {
   $("#start-button").toggleClass("start");
   $(".header").toggleClass("start");
   $(".container").toggleClass("start");

@@ -10,19 +10,41 @@ body {
   background-color: #1f2833;
   color: white;
   font-family: sans-serif;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.line {
+// Nav Bar
+
+nav {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+
+// Hamburger Icon
+
+.menu {
   position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 4px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.line {
   width: 100%;
   height: 4px;
   background: white;
   border-radius: 8px;
-  margin: 5px;
   transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
 }
 
@@ -39,43 +61,29 @@ body {
 }
 
 .icon.close .top {
+  position: absolute;
   transform: rotate(45deg);
   top: 48%;
 }
 
 .icon.close .middle,
 .icon.close .botton {
+  position: absolute;
   transform: rotate(-45deg);
   top: 48%;
 }
 
-nav {
-  position: relative;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  position: fixed;
-  z-index: 3;
-}
-
-.menu {
-  position: relative;
-  width: 30px;
-  left: 10px;
-  display: inline-block;
-  cursor: pointer;
-  z-index: 3;
-}
+// Nav Menu
 
 .nav-links {
   position: fixed;
   background: #45a29e;
-  flex-direction: column;
   clip-path: circle(60px at 0 -20%);
   -webkit-clip-path: circle(60px at 0 -20%);
-  transition: all 0.55s ease-out;
+  transition: all 1s ease-out;
   pointer-events: none;
   display: flex;
+  flex-direction: column;
   list-style: none;
   width: 100%;
   height: 100%;
@@ -150,17 +158,17 @@ nav {
 }
 
 .nav-links.open {
-  clip-path: circle(2500px at 0 -20%);
-  -webkit-clip-path: circle(2500px at 0 -20%);
+  clip-path: circle(5000px at 0 -20%);
+  -webkit-clip-path: circle(5000px at 0 -20%);
   pointer-events: all;
 }
 
+// Header
+
 .header {
+  width: 68%;
   position: relative;
-  width: 100%;
-  height: 50%;
-  margin-top: 40px;
-  padding: 0 10%;
+  top: 50px;
   transition: all 1s ease;
   transition-delay: 1s;
 
@@ -183,11 +191,11 @@ nav {
   }
 }
 
+// Button
+
 .button {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 50px;
   transition: all 1s ease;
 
   a {
@@ -240,7 +248,8 @@ nav {
     }
   }
 
-  a:hover {
+  a:hover,
+  a:active {
     color: #1f2833;
     background: #66fcf1;
     box-shadow: 0 0 10px #66fcf1, 0 0 40px #66fcf1, 0 0 80px #66fcf1;
@@ -271,114 +280,34 @@ nav {
   }
 }
 
-h1 {
-  font-size: 124px;
-  position: absolute;
-  left: -15%;
-  top: -30%;
-  z-index: -1;
-  opacity: 10%;
-}
-
-.text {
-  position: absolute;
-  top: 30%;
-  left: 25%;
-  width: 50%;
-
-  p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    letter-spacing: 1px;
-    text-align: justify;
-
-    .expressions {
-      font-size: 12px;
-      font-style: italic;
-      opacity: 50%;
-      cursor: default;
-      color: #000;
-      background-color: #000;
-    }
-
-    .expressions:hover {
-      opacity: 100%;
-      color: #fff;
-      background-color: inherit;
-      text-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px #fff;
-    }
-  }
-
-  #about_text {
-    color: #c5c6c7;
-
-    strong {
-      font-size: 24px;
-    }
-  }
-}
-
-footer {
-  margin-top: auto;
-  font-size: 12px;
-  text-align: center;
-  z-index: -1;
-}
-
-#mc_embed_signup {
-  font: 14px Helvetica, Arial, sans-serif;
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  width: 40%;
-
-  .clear {
-    display: flex;
-    justify-content: center;
-
-    #mc-embedded-subscribe {
-      position: relative;
-      display: inline-block;
-      padding: 15px 30px;
-      color: #0b0c10;
-      background-color: #45a29e;
-      height: auto;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      text-decoration: none;
-      font-size: 24px;
-      overflow: hidden;
-      transition: 0.2s;
-    }
-
-    #mc-embedded-subscribe:hover {
-      background-color: #0b0c10;
-      color: #45a29e;
-    }
-  }
-}
-
 .button.start {
   opacity: 0;
   z-index: -1;
 }
 
 .header.start {
-  padding: 0 30%;
+  padding: 0 10%;
 }
+
+.container.start {
+  opacity: 1;
+  z-index: 1;
+}
+
+// Cards
 
 .container {
   opacity: 0;
-  z-index: -2;
-  width: 1000px;
-  position: absolute;
-  top: 45vh;
+  width: 75%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
   color: #000;
   cursor: default;
   transition: all 1s ease;
   transition-delay: 1s;
+  z-index: -2;
 
   .card {
     position: relative;
@@ -458,7 +387,8 @@ footer {
     }
   }
 
-  .card:hover {
+  .card:hover,
+  .card:active {
     .face.face1 {
       transform: translateY(0);
       background: #45a29e;
@@ -472,7 +402,63 @@ footer {
   }
 }
 
-.container.start {
-  opacity: 1;
-  z-index: 1;
+// Footer
+
+footer {
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media only screen and (max-width: 800px) {
+}
+
+// About Page
+
+h1 {
+  font-size: 124px;
+  position: absolute;
+  left: -15%;
+  top: -30%;
+  z-index: -1;
+  opacity: 10%;
+}
+
+.text {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: justify;
+
+    .expressions {
+      font-size: 12px;
+      font-style: italic;
+      opacity: 50%;
+      cursor: default;
+      color: #000;
+      background-color: #000;
+    }
+
+    .expressions:hover {
+      opacity: 100%;
+      color: #fff;
+      background-color: inherit;
+      text-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px #fff;
+    }
+  }
+
+  #about_text {
+    color: #c5c6c7;
+
+    strong {
+      font-size: 24px;
+    }
+  }
 }
