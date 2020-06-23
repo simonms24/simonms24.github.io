@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #111;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 600px;
+  height: 450px;
+  background: #000;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+img {
+  max-width: 600px;
+  max-height: 450px;
+}
+
+.head {
+  position: absolute;
+  top: 0;
+  width: 75%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.head svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.head svg .text {
+  stroke-dasharray: 1900;
+  stroke-dashoffset: 1900;
+  -webkit-animation: animate 10s linear 1s forwards;
+          animation: animate 10s linear 1s forwards;
+}
+
+@-webkit-keyframes animate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */
